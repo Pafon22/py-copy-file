@@ -11,11 +11,11 @@ def copy_file(
             and command_array[1] != command_array[2]
         ):
             with (
-                open(command_array[1], "r") as my_file,
-                open(command_array[2], "w") as new_file
+                open(command_array[1], "r") as source_file,
+                open(command_array[2], "w") as destination_file
             ):
-                file_content = my_file.read()
-                new_file.write(file_content)
+                file_content = source_file.read()
+                destination_file.write(file_content)
     except ValueError:
         print("Please, the command must have exactly 3 values.")
     except FileNotFoundError:
